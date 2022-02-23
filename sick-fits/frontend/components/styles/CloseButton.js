@@ -11,3 +11,4 @@ const CloseButton = styled.button`
 `;
 
 export default CloseButton;
+
