@@ -6,7 +6,6 @@ const GolbalStyles = createGlobalStyle`
 @font-face {
   font-family: 'radnika_next';
   src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');
-  format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -22,6 +21,7 @@ html {
   --maxWidth: 1000px;
   --bs: '0 12px 23px 0 rgba(0, 0, 0, 0.19)';
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -47,7 +47,7 @@ button {
 `;
 
 const InnerStyles = styled.div`
-  max=width: var(--maxWidth);
+  max-width: var(--maxWidth);
   margin: 0 auto;
   padding: 2rem;
 `;

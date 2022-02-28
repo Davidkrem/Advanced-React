@@ -20,7 +20,7 @@ function createClient({ headers, initialState }) {
             `[Network error]: ${networkError}. Backend is unreachable. Is it running?`
           );
       }),
-      // this uses apollo-link-http under the hood, so all the options here come from that package
+      // this uses apollo-link-http under the hood, so all the options here come from that package + cookies
       createUploadLink({
         uri: process.env.NODE_ENV === 'development' ? endpoint : prodEndpoint,
         fetchOptions: {
@@ -39,7 +39,7 @@ function createClient({ headers, initialState }) {
           },
         },
       },
-    }).restore(initialState || {}),
+    }).restore(initialState || {}), // if any initial state, then restore it - otherwise just go with the defaults
   });
 }
 
